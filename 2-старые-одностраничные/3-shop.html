@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Глина — керамика ручной работы</title>
+<meta name="description" content="Кружки, тарелки и вазы ручной работы. Доставка по всей стране.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. ЦВЕТА И ШРИФТЫ ===== */
+:root{
+  --cobalt:#2433d6;     /* главный: кобальт */
+  --lemon:#f6e85a;      /* акцент: лимонный */
+  --bg:#ffffff;
+  --soft:#eef0fb;
+  --ink:#12163a;
+  --muted:#5c6190;
+  --head:"Rubik","Arial Black",sans-serif;
+  --body:"Golos Text","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--lemon);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ===== 2. ШАПКА И КОРЗИНА-КНОПКА ===== */
+.bar{background:var(--cobalt);color:#fff;position:sticky;top:0;z-index:5}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--head);font-weight:800;font-size:24px;text-decoration:none}
+.cart-btn{background:var(--lemon);color:var(--ink);border:0;border-radius:999px;padding:9px 18px;font-weight:600}
+.cart-btn:hover{background:#fff17f}
+
+/* ===== 3. ПЕРВЫЙ ЭКРАН ===== */
+.hero{background:var(--cobalt);color:#fff;padding:36px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(38px,6vw,72px);line-height:1.02;letter-spacing:-.02em}
+.hero p{margin:20px 0 28px;font-size:19px;color:#d8dcff;max-width:27em}
+.btn{display:inline-block;background:var(--lemon);color:var(--ink);padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:0}
+.btn:hover{background:#fff17f}
+.hero-art svg{width:100%;max-width:340px;display:block;margin:0 auto}
+
+/* ===== 4. ПЛЮСЫ ===== */
+.perks{background:var(--soft)}
+.perks .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.perks b{font-family:var(--head)}
+.perks span{display:block;color:var(--muted);font-size:15px}
+
+/* ===== 5. КАТАЛОГ ===== */
+section{padding:70px 0}
+h2{font-family:var(--head);font-size:clamp(28px,4vw,42px);margin-bottom:22px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{border:2px solid var(--cobalt);background:#fff;color:var(--cobalt);border-radius:999px;padding:8px 18px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--cobalt);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{display:flex;flex-direction:column}
+.pic{background:var(--soft);border-radius:14px;aspect-ratio:1;display:grid;place-items:center}
+.pic svg{width:62%}
+.card h3{font-size:17px;margin-top:12px;font-weight:600}
+.card .meta{color:var(--muted);font-size:14px}
+.card .buy{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.card .buy b{font-family:var(--head);font-size:18px}
+.add{background:var(--cobalt);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-weight:500}
+.add:hover{background:#1a27ab}
+
+/* ===== 6. ВЫДВИЖНАЯ КОРЗИНА ===== */
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:#fff;box-shadow:-8px 0 30px rgba(18,22,58,.25);transform:translateX(105%);transition:transform .25s;z-index:10;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #e1e4f5}
+.drawer h2{margin:0;font-size:24px}
+.close{background:none;border:0;font-size:28px;line-height:1}
+.items{flex:1;overflow:auto;padding:10px 20px}
+.line{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 0;border-bottom:1px solid #eceefa}
+.line small{color:var(--muted)}
+.line button{background:none;border:0;color:var(--cobalt);text-align:right;font-size:14px;text-decoration:underline}
+.empty{color:var(--muted);padding:20px 0}
+.total{padding:18px 20px;border-top:1px solid #e1e4f5}
+.total .sum{display:flex;justify-content:space-between;font-family:var(--head);font-size:20px;margin-bottom:12px}
+.total .btn{width:100%;text-align:center;background:var(--cobalt);color:#fff}
+.total .btn:hover{background:#1a27ab}
+.shade{position:fixed;inset:0;background:rgba(18,22,58,.45);display:none;z-index:9}
+.shade.open{display:block}
+
+footer{background:var(--ink);color:#aab0e0;padding:28px 0;font-size:14px}
+
+/* ===== 7. ТЕЛЕФОН ===== */
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .hero .wrap,.perks .wrap{grid-template-columns:1fr}
+  .hero-art{display:none}
+}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="logo" href="#">Глина</a>
+    <button class="cart-btn" id="openCart" type="button">Корзина (<span id="count">0</span>)</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Кружки, из которых вкуснее чай</h1>
+      <p>Керамика ручной работы: каждую вещь лепит и обжигает мастер. Двух одинаковых нет.</p>
+      <a class="btn" href="#catalog">Выбрать посуду</a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="#f6e85a"/><path d="M52 70h82v48a30 30 0 0 1-30 30H82a30 30 0 0 1-30-30z" fill="#fff"/><path d="M134 82h10a18 18 0 0 1 0 36h-10" fill="none" stroke="#fff" stroke-width="10"/></svg>
+    </div>
+  </div>
+</header>
+
+<div class="perks">
+  <div class="wrap">
+    <div><b>Доставка по России</b><span>СДЭК и Почта России, 2-7 дней</span></div>
+    <div><b>Упаковка, которая не бьётся</b><span>Кладём в гофрокороб с наполнителем</span></div>
+    <div><b>Обмен за 14 дней</b><span>Если вещь пришла с трещиной, заменим</span></div>
+  </div>
+</div>
+
+<main>
+  <section id="catalog">
+    <div class="wrap">
+      <h2>Каталог</h2>
+      <div class="filters" id="filters" role="group" aria-label="Категории"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© Глина. Демо-магазин: товары и цены выдуманные. Корзина работает только в браузере, оплаты нет.</div>
+</footer>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <header><h2>Корзина</h2><button class="close" id="closeCart" type="button" aria-label="Закрыть">×</button></header>
+  <div class="items" id="items"></div>
+  <div class="total">
+    <div class="sum"><span>Итого</span><span id="sum">0 ₽</span></div>
+    <a class="btn" id="order" href="#">Оформить заказ в Telegram</a>
+  </div>
+</aside>
+
+<script>
+/* ===== ТОВАРЫ — меняй список, и каталог обновится сам ===== */
+var PRODUCTS = [
+  { id: 1, name: "Кружка «Утро»",       cat: "Кружки",  price: 1400, color: "#2433d6", size: "300 мл" },
+  { id: 2, name: "Кружка «Лимон»",      cat: "Кружки",  price: 1500, color: "#e8cf1f", size: "350 мл" },
+  { id: 3, name: "Пиала «Рис»",         cat: "Тарелки", price: 1100, color: "#12163a", size: "500 мл" },
+  { id: 4, name: "Тарелка «Луна»",      cat: "Тарелки", price: 1900, color: "#5c6190", size: "24 см" },
+  { id: 5, name: "Ваза «Колос»",        cat: "Вазы",    price: 3200, color: "#2433d6", size: "22 см" },
+  { id: 6, name: "Ваза «Капля»",        cat: "Вазы",    price: 2700, color: "#e8cf1f", size: "16 см" },
+  { id: 7, name: "Кружка «Ночь»",       cat: "Кружки",  price: 1600, color: "#12163a", size: "300 мл" },
+  { id: 8, name: "Тарелка «Облако»",    cat: "Тарелки", price: 2100, color: "#aab4f5", size: "27 см" }
+];
+var TELEGRAM = "your_shop";   // ник клиента в Telegram без @
+
+var cart = {};        // { id товара: количество }
+var category = "Все";
+
+function rub(n){ return n.toLocaleString("ru-RU") + " ₽"; }
+
+// картинка товара рисуется кодом, фото не нужны
+function picture(p){
+  var body;
+  if (p.cat === "Кружки")
+    body = '<path d="M30 50h80v50a30 30 0 0 1-30 30H60a30 30 0 0 1-30-30z" fill="'+p.color+'"/><path d="M110 62h10a18 18 0 0 1 0 36h-10" fill="none" stroke="'+p.color+'" stroke-width="10"/>';
+  else if (p.cat === "Тарелки")
+    body = '<ellipse cx="80" cy="85" rx="64" ry="26" fill="'+p.color+'"/><ellipse cx="80" cy="82" rx="42" ry="14" fill="#fff" opacity=".35"/>';
+  else
+    body = '<path d="M62 28h36l-6 26c22 14 26 40 18 68H50c-8-28-4-54 18-68z" fill="'+p.color+'"/>';
+  return '<svg viewBox="0 0 160 150" aria-hidden="true">' + body + '</svg>';
+}
+
+function renderFilters(){
+  var cats = ["Все", "Кружки", "Тарелки", "Вазы"];
+  document.getElementById("filters").innerHTML = cats.map(function(c){
+    return '<button class="chip" type="button" data-cat="'+c+'" aria-pressed="'+(c===category)+'">'+c+'</button>';
+  }).join("");
+}
+
+function renderGrid(){
+  var list = PRODUCTS.filter(function(p){ return category === "Все" || p.cat === category; });
+  document.getElementById("grid").innerHTML = list.map(function(p){
+    return '<article class="card"><div class="pic">'+picture(p)+'</div>' +
+      '<h3>'+p.name+'</h3><span class="meta">'+p.size+'</span>' +
+      '<div class="buy"><b>'+rub(p.price)+'</b><button class="add" type="button" data-add="'+p.id+'">В корзину</button></div></article>';
+  }).join("");
+}
+
+function renderCart(){
+  var ids = Object.keys(cart), total = 0, count = 0, text = "Здравствуйте! Хочу заказать:%0A";
+  var html = ids.map(function(id){
+    var p = PRODUCTS.filter(function(x){ return x.id == id; })[0];
+    var q = cart[id];
+    total += p.price * q; count += q;
+    text += encodeURIComponent(p.name + " × " + q) + "%0A";
+    return '<div class="line"><b>'+p.name+'</b><span>'+rub(p.price*q)+'</span>' +
+           '<small>'+q+' шт.</small><button type="button" data-del="'+id+'">убрать</button></div>';
+  }).join("");
+  document.getElementById("items").innerHTML = html || '<p class="empty">Пока пусто. Добавьте что-нибудь из каталога.</p>';
+  document.getElementById("count").textContent = count;
+  document.getElementById("sum").textContent = rub(total);
+  document.getElementById("order").href = "https://t.me/" + TELEGRAM + "?text=" + text;
+}
+
+function toggleCart(open){
+  document.getElementById("drawer").classList.toggle("open", open);
+  document.getElementById("shade").classList.toggle("open", open);
+}
+
+document.addEventListener("click", function(e){
+  var t = e.target;
+  if (t.dataset.cat){ category = t.dataset.cat; renderFilters(); renderGrid(); }
+  if (t.dataset.add){ cart[t.dataset.add] = (cart[t.dataset.add] || 0) + 1; renderCart(); }
+  if (t.dataset.del){ delete cart[t.dataset.del]; renderCart(); }
+});
+document.getElementById("openCart").onclick = function(){ toggleCart(true); };
+document.getElementById("closeCart").onclick = function(){ toggleCart(false); };
+document.getElementById("shade").onclick = function(){ toggleCart(false); };
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") toggleCart(false); });
+
+renderFilters(); renderGrid(); renderCart();
+</script>
+</body>
+</html>

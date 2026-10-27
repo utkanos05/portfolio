@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню — Ольха · кухня на ольховых углях</title>
+  <meta name="description" content="Меню ресторана «Ольха»: закуски, основные блюда, десерты и напитки. Демо-сайт для портфолио.">
+  <meta name="theme-color" content="#15302c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2315302c'/%3E%3Cpath d='M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z' fill='%236f2639'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Ольха — на главную">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+          <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Ольха<small>кухня на углях</small></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        Меню
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="menu.html" aria-current="page">Меню</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li class="nav-cta"><a class="btn btn--small" href="booking.html">Забронировать</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Октябрь · меню месяца</p>
+        <h1>Что подаём <em>сейчас</em></h1>
+        <p class="lead">Меню меняется вместе с сезоном. Всё, что можно приготовить на огне, мы готовим на ольховых углях.</p>
+      </div>
+    </section>
+
+    <!-- ===================== ФИЛЬТР =====================
+         data-filter у кнопки должен совпадать с data-category у раздела.
+         Число блюд на кнопках скрипт посчитает сам. -->
+    <div class="menu-filter">
+      <div class="wrap">
+        <ul class="filter-list" aria-label="Категории меню">
+          <li><button class="filter-btn" type="button" data-filter="all" aria-pressed="true"><span class="filter-name">Всё меню</span><span class="filter-count"></span></button></li>
+          <li><button class="filter-btn" type="button" data-filter="starters" aria-pressed="false"><span class="filter-name">Закуски</span><span class="filter-count"></span></button></li>
+          <li><button class="filter-btn" type="button" data-filter="mains" aria-pressed="false"><span class="filter-name">Основные</span><span class="filter-count"></span></button></li>
+          <li><button class="filter-btn" type="button" data-filter="desserts" aria-pressed="false"><span class="filter-name">Десерты</span><span class="filter-count"></span></button></li>
+          <li><button class="filter-btn" type="button" data-filter="drinks" aria-pressed="false"><span class="filter-name">Напитки</span><span class="filter-count"></span></button></li>
+        </ul>
+        <p class="menu-status" id="menu-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <!-- ===================== ЗАКУСКИ =====================
+           Чтобы добавить блюдо — скопируйте целиком блок <li class="dish">…</li>.
+           Цена — внутри <span class="dish-price">. -->
+      <section class="menu-section" data-category="starters" aria-labelledby="cat-starters">
+        <div class="menu-section-head">
+          <!-- Рисунок: грибы на доске -->
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="#cfd8d0"/>
+            <rect x="18" y="78" width="84" height="12" rx="6" fill="#15302c"/>
+            <path d="M34 78v-16h10v16" fill="#e6eae3" stroke="#15302c" stroke-width="2"/>
+            <path d="M24 64c0-14 30-14 30 0z" fill="#6f2639"/>
+            <path d="M66 78v-22h12v22" fill="#e6eae3" stroke="#15302c" stroke-width="2"/>
+            <path d="M54 58c0-20 36-20 36 0z" fill="#b38a45"/>
+          </svg>
+          <h2 id="cat-starters">Закуски</h2>
+          <p>Холодное и тёплое — то, с чего начинается стол и разговор.</p>
+        </div>
+        <ul class="dish-list">
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Строганина из муксуна</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;150&nbsp;₽</span></div>
+            <p class="dish-desc">Тонкие ломтики замороженной рыбы, моховая соль, перец, пюре из печёного лука.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Печёная свёкла и козий творог</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">780&nbsp;₽</span></div>
+            <p class="dish-desc">Свёкла из золы, творог с фермы под Тверью, лесной орех, масло из чёрной смородины.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Тартар из оленины</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;290&nbsp;₽</span></div>
+            <p class="dish-desc">Рубленая вырезка, желток в соевом маринаде, маринованная черемша, гренки из ржи.</p>
+            <span class="dish-tag">Фирменное</span>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Белые грибы на углях</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;050&nbsp;₽</span></div>
+            <p class="dish-desc">Целые шляпки, топлёное масло, тимьян, соус из грибного бульона.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Погреб «Ольхи»</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">890&nbsp;₽</span></div>
+            <p class="dish-desc">Ассорти домашних солений и квашений: капуста с клюквой, огурцы с хреном, рыжики.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Ржаной хлеб на закваске</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">290&nbsp;₽</span></div>
+            <p class="dish-desc">Печём каждое утро. Подаём тёплым с топлёным маслом и можжевеловой солью.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== ОСНОВНЫЕ ===================== -->
+      <section class="menu-section" data-category="mains" aria-labelledby="cat-mains">
+        <div class="menu-section-head">
+          <!-- Рисунок: рыба на решётке -->
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="#cfd8d0"/>
+            <path d="M20 48h80M20 60h80M20 72h80" stroke="#56645f" stroke-width="2"/>
+            <path d="M26 60c14-18 46-22 64 0-18 22-50 18-64 0z" fill="#15302c"/>
+            <path d="M90 60l14-12v24z" fill="#15302c"/>
+            <circle cx="38" cy="57" r="3" fill="#e6eae3"/>
+            <path d="M52 50l6 20M64 48l6 24M76 50l6 20" stroke="#b38a45" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h2 id="cat-mains">Основные</h2>
+          <p>Мясо, рыба и дичь — всё проходит через огонь печи или гриля.</p>
+        </div>
+        <ul class="dish-list">
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Дикая утка с брусникой</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">2&nbsp;450&nbsp;₽</span></div>
+            <p class="dish-desc">Грудка на углях, ножка конфи, печёная репа, соус из брусники и можжевельника.</p>
+            <span class="dish-tag">Блюдо октября</span>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Судак, копчённый на ольхе</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;890&nbsp;₽</span></div>
+            <p class="dish-desc">Филе тёплого копчения, пюре из сельдерея, сливочный соус с укропным маслом.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Свиная щека и антоновка</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;690&nbsp;₽</span></div>
+            <p class="dish-desc">Томится в печи двенадцать часов. Печёное яблоко, квашеная капуста, горчичный соус.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Щи из печи</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">890&nbsp;₽</span></div>
+            <p class="dish-desc">Суточные щи из квашеной капусты с томлёной грудинкой, сметана, ржаной сухарь.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Стейк из лосятины</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">3&nbsp;200&nbsp;₽</span></div>
+            <p class="dish-desc">Медальон на гриле, печёный картофель в золе, соус из чёрной смородины.</p>
+            <span class="dish-tag">Фирменное</span>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Перловка с грибами</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">1&nbsp;150&nbsp;₽</span></div>
+            <p class="dish-desc">Как ризотто, но наша: перловая крупа, лесные грибы, выдержанный сыр, жареный лук.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== ДЕСЕРТЫ ===================== -->
+      <section class="menu-section" data-category="desserts" aria-labelledby="cat-desserts">
+        <div class="menu-section-head">
+          <!-- Рисунок: кусок ягодного пирога -->
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="#cfd8d0"/>
+            <path d="M22 80L60 34 98 80z" fill="#b38a45"/>
+            <path d="M30 72L60 40 90 72z" fill="#6f2639"/>
+            <rect x="22" y="80" width="76" height="10" fill="#15302c"/>
+            <circle cx="56" cy="58" r="3" fill="#e6eae3"/><circle cx="66" cy="64" r="3" fill="#e6eae3"/><circle cx="50" cy="68" r="2.5" fill="#e6eae3"/>
+          </svg>
+          <h2 id="cat-desserts">Десерты</h2>
+          <p>Сладкое без лишнего сахара: мёд, ягоды, печёные яблоки и дым.</p>
+        </div>
+        <ul class="dish-list">
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Антоновка и дымный мёд</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">690&nbsp;₽</span></div>
+            <p class="dish-desc">Печёное яблоко, взбитые сливки, мёд, подкопчённый на ольховой стружке.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Черничный пирог из печи</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">650&nbsp;₽</span></div>
+            <p class="dish-desc">Песочное тесто на сливочном масле, лесная черника, мороженое из ряженки.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Ржаной медовик</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">590&nbsp;₽</span></div>
+            <p class="dish-desc">Коржи из ржаной муки, сметанный крем, солёная карамель из гречишного мёда.</p>
+            <span class="dish-tag">Фирменное</span>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Сорбет из облепихи</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">450&nbsp;₽</span></div>
+            <p class="dish-desc">Яркий и кислый, с хрустящей безе и листиком мяты.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== НАПИТКИ ===================== -->
+      <section class="menu-section" data-category="drinks" aria-labelledby="cat-drinks">
+        <div class="menu-section-head">
+          <!-- Рисунок: бокал и ягода -->
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="#cfd8d0"/>
+            <path d="M40 28h40c0 26-8 38-20 38S40 54 40 28z" fill="#e6eae3" stroke="#15302c" stroke-width="2.5"/>
+            <path d="M42 40h36c-2 16-8 24-18 24s-16-8-18-24z" fill="#6f2639"/>
+            <path d="M60 66v22M46 90h28" stroke="#15302c" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="86" cy="80" r="7" fill="#b38a45"/>
+          </svg>
+          <h2 id="cat-drinks">Напитки</h2>
+          <p>Морсы, взвары и наливки собственного приготовления, а также вина небольших хозяйств.</p>
+        </div>
+        <ul class="dish-list">
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Морс из брусники</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">390&nbsp;₽</span></div>
+            <p class="dish-desc">Кувшин 0,5 л. Варим каждый день, сахара — совсем немного.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Иван-чай на углях</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">450&nbsp;₽</span></div>
+            <p class="dish-desc">Ферментированный кипрей, заваренный в чугунном чайнике. Чайник на двоих.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Сбитень</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">420&nbsp;₽</span></div>
+            <p class="dish-desc">Горячий медовый напиток с имбирём, гвоздикой и корицей.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Наливка «Ольха»</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">550&nbsp;₽</span></div>
+            <p class="dish-desc">Черноплодная рябина и вишнёвый лист, выдержка полгода. 50 мл.</p>
+            <span class="dish-tag">Своё</span>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Квас на ржаной закваске</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">320&nbsp;₽</span></div>
+            <p class="dish-desc">Тёмный, с изюмом и мятой. Бокал 0,3 л.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head"><h3 class="dish-name">Вино по бокалам</h3><span class="dish-dots" aria-hidden="true"></span><span class="dish-price">от&nbsp;750&nbsp;₽</span></div>
+            <p class="dish-desc">Белые и красные вина небольших хозяйств Кубани и Крыма. Сомелье подскажет пару к блюду.</p>
+          </li>
+        </ul>
+      </section>
+
+      <p class="menu-note">Цены указаны в рублях и включают НДС. Если у вас аллергия, предупредите официанта — мы адаптируем блюдо.</p>
+    </div>
+
+  </main>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <footer class="site-footer">
+    <svg class="footer-edge" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 40V28L40 14L80 28L120 6L160 26L200 16L240 28L280 4L320 24L360 12L400 28L440 8L480 26L520 18L560 28L600 2L640 24L680 14L720 28L760 6L800 26L840 16L880 28L920 8L960 24L1000 12L1040 28L1080 6L1120 24L1160 16L1200 28V40Z"/>
+    </svg>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Ольха — на главную">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+              <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">Ольха<small>кухня на углях</small></span>
+          </a>
+          <p class="footer-about">Авторская северная кухня, приготовленная на ольховых углях. Сорок мест, одна печь и двенадцать меню в году.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Разделы</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html" aria-current="page">Меню</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="booking.html">Бронирование</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Как найти</h2>
+          <ul class="footer-list">
+            <li>Москва, Туманный переулок, 9</li>
+            <li><a href="tel:+74950001234">+7 (495) 000-12-34</a></li>
+            <li>Ежедневно с 12:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="demo-badge">Демо-сайт</span>
+        <span>Ресторана «Ольха» не существует: названия, адреса, телефоны и цены выдуманы. Сайт сделан для портфолио.</span>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

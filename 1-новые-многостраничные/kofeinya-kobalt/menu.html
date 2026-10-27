@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню — Кобальт · обжарочная и эспрессо-бар</title>
+  <meta name="description" content="Меню кофейни «Кобальт»: эспрессо, альтернатива, авторские напитки и выпечка. Демо-сайт для портфолио.">
+  <meta name="theme-color" content="#1f3fd1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%231f3fd1'/%3E%3Cg transform='rotate(30 20 20)'%3E%3Cellipse cx='20' cy='20' rx='9' ry='13' fill='%23f1f2f6'/%3E%3Cpath d='M20 7c-4 5 4 21 0 26' stroke='%231f3fd1' stroke-width='2.2' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Кобальт — на главную">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#1f3fd1"/>
+          <g transform="rotate(30 20 20)">
+            <ellipse cx="20" cy="20" rx="9" ry="13" fill="#f1f2f6"/>
+            <path d="M20 7c-4 5 4 21 0 26" stroke="#1f3fd1" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span>Кобальт</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="menu.html" aria-current="page">Меню</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="order.html">Предзаказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--small header-cta magnetic" href="order.html">Заказать заранее</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Меню · обновлено в понедельник</p>
+        <h1 data-split="chars"><span class="split-line">Что</span><span class="split-line"><em>наливаем</em></span></h1>
+        <p class="lead" data-reveal style="--d:400ms">Наведите на строку — и она нальётся кобальтом. Цены за стандартный объём, альтернативное молоко +70&nbsp;₽.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- ===================== ФИЛЬТР =====================
+           data-filter у кнопки = data-cat у позиции.
+           Число позиций на кнопках скрипт посчитает сам. -->
+      <div class="filter" role="group" aria-label="Категории меню">
+        <span class="filter-pill" aria-hidden="true"></span>
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Всё</button>
+        <button class="filter-btn" type="button" data-filter="espresso" aria-pressed="false">Эспрессо</button>
+        <button class="filter-btn" type="button" data-filter="filter" aria-pressed="false">Альтернатива</button>
+        <button class="filter-btn" type="button" data-filter="signature" aria-pressed="false">Авторские</button>
+        <button class="filter-btn" type="button" data-filter="bakery" aria-pressed="false">Выпечка</button>
+      </div>
+      <p class="menu-status" id="menu-status" role="status" aria-live="polite"></p>
+
+      <!-- ===================== ПОЗИЦИИ =====================
+           Чтобы добавить напиток, скопируйте блок <li class="item">…</li>.
+           data-cat — категория, цена — в <span class="item-price">. -->
+      <ul class="menu-list">
+        <li class="item" data-cat="espresso">
+          <span class="item-cat">Эспрессо</span>
+          <h2 class="item-name">Эспрессо</h2>
+          <p class="item-desc">Двойной шот смеси «Кобальт»: молочный шоколад, орех, долгое послевкусие.</p>
+          <span class="item-price">180&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="espresso">
+          <span class="item-cat">Эспрессо</span>
+          <h2 class="item-name">Капучино</h2>
+          <p class="item-desc">250 мл. Плотная шелковистая пена и сердце, нарисованное на счёт «три».</p>
+          <span class="item-price">260&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="espresso">
+          <span class="item-cat">Эспрессо</span>
+          <h2 class="item-name">Флэт уайт <span class="item-tag">хит</span></h2>
+          <p class="item-desc">Двойной ристретто и тонкий слой молока — кофе слышно лучше всего.</p>
+          <span class="item-price">280&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="espresso">
+          <span class="item-cat">Эспрессо</span>
+          <h2 class="item-name">Латте</h2>
+          <p class="item-desc">350 мл. Мягкий и молочный, для неспешного утра.</p>
+          <span class="item-price">270&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="espresso">
+          <span class="item-cat">Эспрессо</span>
+          <h2 class="item-name">Американо</h2>
+          <p class="item-desc">Эспрессо и горячая вода. Попросите сорт дня вместо смеси — это бесплатно.</p>
+          <span class="item-price">200&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="filter">
+          <span class="item-cat">Альтернатива</span>
+          <h2 class="item-name">Воронка V60</h2>
+          <p class="item-desc">Любой сорт из ротации, 300 мл. Бариста расскажет про ферму и обработку.</p>
+          <span class="item-price">от&nbsp;240&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="filter">
+          <span class="item-cat">Альтернатива</span>
+          <h2 class="item-name">Аэропресс</h2>
+          <p class="item-desc">Чуть плотнее воронки, с яркой кислотностью. Готовим 2 минуты.</p>
+          <span class="item-price">260&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="filter">
+          <span class="item-cat">Альтернатива</span>
+          <h2 class="item-name">Колд брю <span class="item-tag">холодный</span></h2>
+          <p class="item-desc">18 часов холодной экстракции. Сладкий, без горечи, на большом льду.</p>
+          <span class="item-price">290&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="filter">
+          <span class="item-cat">Альтернатива</span>
+          <h2 class="item-name">Чайник на двоих</h2>
+          <p class="item-desc">600 мл фильтра в фарфоровом чайнике — для долгих разговоров.</p>
+          <span class="item-price">420&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="signature">
+          <span class="item-cat">Авторские</span>
+          <h2 class="item-name">Раф «Кобальт» <span class="item-tag">фирменный</span></h2>
+          <p class="item-desc">Сливки, эспрессо, ваниль и щепоть морской соли. Подаём в синей чашке.</p>
+          <span class="item-price">340&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="signature">
+          <span class="item-cat">Авторские</span>
+          <h2 class="item-name">Колд брю на тонике</h2>
+          <p class="item-desc">Тоник, апельсиновая цедра и колд брю, налитый последним, — получается три слоя.</p>
+          <span class="item-price">330&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="signature">
+          <span class="item-cat">Авторские</span>
+          <h2 class="item-name">Халва-латте</h2>
+          <p class="item-desc">Подсолнечная халва, взбитая с молоком, и двойной эспрессо.</p>
+          <span class="item-price">320&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="signature">
+          <span class="item-cat">Авторские</span>
+          <h2 class="item-name">Облепиховый эспрессо-тоник</h2>
+          <p class="item-desc">Облепиховое пюре, тоник, эспрессо. Кислое, яркое, бодрит лучше будильника.</p>
+          <span class="item-price">350&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="bakery">
+          <span class="item-cat">Выпечка</span>
+          <h2 class="item-name">Круассан на сливочном масле</h2>
+          <p class="item-desc">Печём каждое утро в 7:00. К 11 часам обычно заканчиваются.</p>
+          <span class="item-price">220&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="bakery">
+          <span class="item-cat">Выпечка</span>
+          <h2 class="item-name">Кардамоновая булочка <span class="item-tag">хит</span></h2>
+          <p class="item-desc">Скрученная вручную, с кардамоном и жемчужным сахаром.</p>
+          <span class="item-price">240&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="bakery">
+          <span class="item-cat">Выпечка</span>
+          <h2 class="item-name">Баскский чизкейк</h2>
+          <p class="item-desc">С карамельной корочкой и мягкой серединой. Кусок 150 г.</p>
+          <span class="item-price">390&nbsp;₽</span>
+        </li>
+        <li class="item" data-cat="bakery">
+          <span class="item-cat">Выпечка</span>
+          <h2 class="item-name">Тост с рикоттой и мёдом</h2>
+          <p class="item-desc">Хлеб на закваске, рикотта, мёд, грецкий орех, морская соль.</p>
+          <span class="item-price">360&nbsp;₽</span>
+        </li>
+      </ul>
+
+      <p class="menu-note">Все цены в рублях. Зерно на вынос — 250 г от 1&nbsp;150&nbsp;₽, смелем под вашу кофеварку бесплатно.</p>
+    </div>
+
+  </main>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-lead">Кофе, который обжарили <span class="accent">вчера</span>.</p>
+          <a class="btn btn--light magnetic" href="order.html">Заказать заранее <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div>
+          <h2 class="footer-title">Разделы</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html" aria-current="page">Меню</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="order.html">Предзаказ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Адрес</h2>
+          <ul class="footer-list">
+            <li>Москва, Фарфоровый проезд, 3</li>
+            <li><a href="tel:+74950005678">+7 (495) 000-56-78</a></li>
+            <li>Пн–Пт 7:30–21:00<br>Сб–Вс 9:00–22:00</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-giant" aria-hidden="true">Кобальт</p>
+      <div class="footer-bottom">
+        <span class="demo-badge">Демо-сайт</span>
+        <span>Кофейни «Кобальт» не существует: названия, адреса, телефоны и цены выдуманы. Сайт сделан для портфолио.</span>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

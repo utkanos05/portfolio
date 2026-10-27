@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ольха — авторская кухня на ольховых углях · Москва</title>
+  <meta name="description" content="Ольха — авторский ресторан северной кухни в Москве. Всё готовим на ольховых углях. Демо-сайт для портфолио.">
+  <meta name="theme-color" content="#15302c">
+
+  <!-- Шрифты с кириллицей: Cormorant Garamond (заголовки) и Manrope (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Иконка вкладки — нарисована SVG прямо здесь -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2315302c'/%3E%3Cpath d='M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z' fill='%236f2639'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================== ШАПКА =====================
+       Шапка одинаковая на всех 5 страницах. Если меняете пункты
+       меню — поменяйте их во всех файлах. Текущая страница
+       отмечается атрибутом aria-current="page". -->
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Ольха — на главную">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+          <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Ольха<small>кухня на углях</small></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        Меню
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li class="nav-cta"><a class="btn btn--small" href="booking.html">Забронировать</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== ПЕРВЫЙ ЭКРАН ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Авторский ресторан · Москва</p>
+          <h1 class="hero-title" id="hero-title">
+            <span>Ольха</span>
+            <em>и дым</em>
+            <span class="hero-title-small">Северная кухня на ольховых углях</span>
+          </h1>
+          <p class="hero-text">
+            Двенадцать месяцев — двенадцать меню. Мы готовим только то, что в этот момент
+            растёт, зреет или ловится, и доводим это до вкуса над живым огнём ольхи.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="booking.html">Забронировать столик</a>
+            <a class="btn btn--ghost" href="menu.html">Смотреть меню</a>
+          </div>
+        </div>
+
+        <!-- Иллюстрация: ветка ольхи с серёжками и шишечками. Цвета — из палитры -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 500 560">
+            <defs>
+              <!-- форма листа ольхи: округлый, с выемкой на конце -->
+              <path id="leaf" d="M0 0 C-30 10 -40 50 -22 72 C-12 84 -4 80 0 76 C4 80 12 84 22 72 C40 50 30 10 0 0 Z"/>
+            </defs>
+
+            <!-- фон: большой туманный круг и тонкое латунное кольцо -->
+            <circle cx="260" cy="270" r="230" fill="#cfd8d0"/>
+            <circle cx="260" cy="270" r="248" fill="none" stroke="#b38a45" stroke-width="1"/>
+            <circle cx="372" cy="128" r="46" fill="#6f2639" opacity=".9"/>
+
+            <!-- ветка -->
+            <path class="branch-line" d="M60 530 C140 430 190 370 250 310 S380 190 440 80" fill="none" stroke="#15302c" stroke-width="6" stroke-linecap="round"/>
+            <path class="branch-line" d="M250 310 C300 305 345 325 378 362" fill="none" stroke="#15302c" stroke-width="4" stroke-linecap="round"/>
+            <path class="branch-line" d="M196 366 C168 318 160 270 172 214" fill="none" stroke="#15302c" stroke-width="4" stroke-linecap="round"/>
+            <path class="branch-line" d="M338 196 C368 196 404 212 434 244" fill="none" stroke="#15302c" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- листья -->
+            <g fill="#15302c">
+              <use href="#leaf" transform="translate(378 362) rotate(-30)"/>
+              <use href="#leaf" transform="translate(172 214) rotate(160)"/>
+              <use href="#leaf" transform="translate(434 244) rotate(-50) scale(.8)"/>
+              <use href="#leaf" transform="translate(120 450) rotate(60) scale(.9)"/>
+              <use href="#leaf" transform="translate(300 250) rotate(200) scale(.75)"/>
+            </g>
+            <!-- прожилки листьев (светлые) -->
+            <g stroke="#cfd8d0" stroke-width="1.4" fill="none" stroke-linecap="round">
+              <path d="M378 362 l38 62"/>
+              <path d="M172 214 l-24 -66"/>
+              <path d="M434 244 l46 34"/>
+              <path d="M120 450 l-60 34"/>
+            </g>
+
+            <!-- серёжки ольхи: качаются (кроме режима «меньше анимации») -->
+            <g transform="translate(232 328)"><g class="catkin">
+              <line x1="0" y1="0" x2="0" y2="12" stroke="#15302c" stroke-width="2"/>
+              <rect x="-7" y="12" width="14" height="84" rx="7" fill="#b38a45"/>
+              <path d="M-7 28h14M-7 42h14M-7 56h14M-7 70h14M-7 84h14" stroke="#7d5e28" stroke-width="1.5"/>
+            </g></g>
+            <g transform="translate(262 300)"><g class="catkin" style="animation-delay:-2s">
+              <line x1="0" y1="0" x2="0" y2="16" stroke="#15302c" stroke-width="2"/>
+              <rect x="-6" y="16" width="12" height="70" rx="6" fill="#b38a45"/>
+              <path d="M-6 30h12M-6 44h12M-6 58h12M-6 72h12" stroke="#7d5e28" stroke-width="1.5"/>
+            </g></g>
+            <g transform="translate(360 188)"><g class="catkin" style="animation-delay:-4s">
+              <line x1="0" y1="0" x2="0" y2="10" stroke="#15302c" stroke-width="2"/>
+              <rect x="-6" y="10" width="12" height="60" rx="6" fill="#b38a45"/>
+              <path d="M-6 24h12M-6 38h12M-6 52h12" stroke="#7d5e28" stroke-width="1.5"/>
+            </g></g>
+
+            <!-- шишечки ольхи (брусничные) -->
+            <g fill="#6f2639">
+              <ellipse cx="406" cy="112" rx="10" ry="14"/>
+              <ellipse cx="426" cy="124" rx="9" ry="12"/>
+              <ellipse cx="412" cy="138" rx="8" ry="11"/>
+            </g>
+            <g stroke="#15302c" stroke-width="2" fill="none">
+              <path d="M418 96 l-10 4 M418 96 l8 16 M418 96 l-4 30"/>
+            </g>
+
+            <!-- дым от углей внизу -->
+            <g fill="none" stroke="#56645f" stroke-width="2" stroke-linecap="round">
+              <path class="smoke-path" d="M330 540 c-20 -30 20 -40 0 -70 s20 -40 0 -70"/>
+              <path class="smoke-path" style="animation-delay:-3s" d="M370 540 c-16 -24 16 -34 0 -58 s16 -34 0 -58"/>
+              <path class="smoke-path" style="animation-delay:-6s" d="M410 540 c-12 -20 12 -28 0 -48"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Бегущая строка. Текст продублирован, чтобы движение было бесконечным -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Огонь ольхи</span><span>Продукты в радиусе 400 км</span><span>Меню меняется каждый месяц</span><span>Хлеб на закваске</span><span>Ферментации своего погреба</span>
+          <span>Огонь ольхи</span><span>Продукты в радиусе 400 км</span><span>Меню меняется каждый месяц</span><span>Хлеб на закваске</span><span>Ферментации своего погреба</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== СЕЗОННЫЙ КРУГ =====================
+         Главный запоминающийся элемент. Кольцо рисует js/main.js,
+         продукты месяцев — в массиве SEASON в начале скрипта. -->
+    <section class="season" aria-labelledby="season-title">
+      <div class="wrap season-grid">
+        <div class="reveal">
+          <p class="eyebrow">Сезонный круг</p>
+          <h2 class="section-title" id="season-title">Что сейчас на&nbsp;огне</h2>
+          <p class="lead">
+            Год для нас — это круг из двенадцати продуктов. Каждый месяц шеф строит меню
+            вокруг одного из них. Покрутите круг и посмотрите, ради чего стоит прийти
+            в&nbsp;любое время года.
+          </p>
+          <p class="season-hint">Нажмите на месяц или используйте стрелки на клавиатуре.</p>
+        </div>
+
+        <div class="dial">
+          <svg viewBox="0 0 600 600" role="group" aria-label="Сезонный круг: выберите месяц">
+            <circle cx="300" cy="300" r="296" fill="none" stroke="rgba(179,138,69,.55)" stroke-width="1"/>
+            <circle cx="300" cy="300" r="182" fill="none" stroke="rgba(179,138,69,.4)" stroke-width="1" stroke-dasharray="2 7"/>
+            <g id="dial-ring" class="dial-ring"></g>
+            <!-- латунный указатель «12 часов» -->
+            <path class="dial-pointer" d="M300 12 L288 -10 L312 -10 Z"/>
+          </svg>
+          <div class="dial-center" aria-live="polite">
+            <span class="dial-month" id="dial-month">Октябрь</span>
+            <span class="dial-product" id="dial-product">Брусника</span>
+            <p class="dial-dish" id="dial-dish">Дикая утка с брусничным соусом</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ПРИНЦИПЫ ===================== -->
+    <section class="section" aria-labelledby="principles-title">
+      <div class="wrap">
+        <p class="eyebrow">Как мы готовим</p>
+        <h2 class="section-title" id="principles-title">Три правила кухни</h2>
+
+        <div class="principles">
+          <article class="principle reveal">
+            <span class="principle-num">i</span>
+            <h3>Только ольха</h3>
+            <p>В печи и на гриле горят исключительно ольховые дрова. Они дают мягкий сладковатый дым — его не перепутать ни с дубом, ни с берёзой.</p>
+          </article>
+          <article class="principle reveal">
+            <span class="principle-num">ii</span>
+            <h3>Четыреста километров</h3>
+            <p>Почти всё, что попадает на тарелку, выращено, поймано или собрано не дальше 400 км от Москвы. Исключения — соль и кофе.</p>
+          </article>
+          <article class="principle reveal">
+            <span class="principle-num">iii</span>
+            <h3>Свой погреб</h3>
+            <p>Летом мы квасим, солим и сушим, чтобы зимой подавать вкус июля. В погребе сейчас 64 банки и 11 бочек.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== СЕТ НЕДЕЛИ ===================== -->
+    <section class="section" aria-labelledby="set-title">
+      <div class="wrap feature">
+        <!-- Тарелка сверху: нарисована SVG -->
+        <div class="feature-plate reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="190" fill="#f2f4f0" stroke="#15302c" stroke-opacity=".15"/>
+            <circle cx="200" cy="200" r="150" fill="none" stroke="#b38a45" stroke-opacity=".6"/>
+            <circle cx="200" cy="200" r="135" fill="#e6eae3"/>
+            <!-- брусничный соус мазком -->
+            <path d="M110 250 C150 200 230 290 300 220 C310 232 300 250 288 258 C230 300 160 236 120 268 Z" fill="#6f2639"/>
+            <!-- кусок рыбы с полосками от гриля -->
+            <g transform="rotate(-18 200 190)">
+              <rect x="140" y="150" width="130" height="70" rx="16" fill="#c9a26a"/>
+              <path d="M160 152 l20 66 M190 152 l20 66 M220 152 l20 66 M250 152 l14 50" stroke="#15302c" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+            </g>
+            <!-- ягоды -->
+            <g fill="#6f2639">
+              <circle cx="276" cy="150" r="8"/><circle cx="292" cy="162" r="6"/><circle cx="270" cy="168" r="5"/>
+              <circle cx="132" cy="216" r="5"/>
+            </g>
+            <!-- зелень -->
+            <g fill="#15302c">
+              <path d="M150 130 c10 -16 30 -16 34 0 c-10 10 -24 10 -34 0z"/>
+              <path d="M240 280 c10 -16 30 -16 34 0 c-10 10 -24 10 -34 0z"/>
+              <path d="M168 120 c4 -12 18 -16 24 -8 c-6 10 -16 12 -24 8z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow">Дегустационный сет</p>
+          <h2 class="section-title" id="set-title">Пять перемен <em>октября</em></h2>
+          <p class="lead">Короткий путь через месяц брусники и дикой утки. Подаём по вечерам, с&nbsp;четверга по&nbsp;субботу.</p>
+          <ol class="set-list">
+            <li>Ржаной хлеб на закваске, топлёное масло с можжевельником</li>
+            <li>Строганина из муксуна, моховая соль</li>
+            <li>Печёная свёкла, козий творог, лесной орех</li>
+            <li>Дикая утка на углях, брусника, репа</li>
+            <li>Антоновка, сливки, дымный мёд</li>
+          </ol>
+          <!-- Цена сета — меняйте здесь -->
+          <p><span class="set-price">6&nbsp;900&nbsp;₽</span> <span class="lead">за гостя</span></p>
+          <a class="btn" href="booking.html">Забронировать на сет</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ЦИТАТА ===================== -->
+    <section class="section">
+      <figure class="wrap quote reveal">
+        <blockquote>«Огонь ничего не прощает. Поэтому мы не спешим — и он отвечает тем&nbsp;же».</blockquote>
+        <figcaption>Арсений Ветлугин, шеф «Ольхи»</figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- ===================== ПОДВАЛ =====================
+       Одинаковый на всех страницах. Пометка «Демо-сайт» обязательна. -->
+  <footer class="site-footer">
+    <svg class="footer-edge" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 40V28L40 14L80 28L120 6L160 26L200 16L240 28L280 4L320 24L360 12L400 28L440 8L480 26L520 18L560 28L600 2L640 24L680 14L720 28L760 6L800 26L840 16L880 28L920 8L960 24L1000 12L1040 28L1080 6L1120 24L1160 16L1200 28V40Z"/>
+    </svg>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Ольха — на главную">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+              <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">Ольха<small>кухня на углях</small></span>
+          </a>
+          <p class="footer-about">Авторская северная кухня, приготовленная на ольховых углях. Сорок мест, одна печь и двенадцать меню в году.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Разделы</h2>
+          <ul class="footer-list">
+            <li><a href="index.html" aria-current="page">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="booking.html">Бронирование</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Как найти</h2>
+          <ul class="footer-list">
+            <li>Москва, Туманный переулок, 9</li>
+            <li><a href="tel:+74950001234">+7 (495) 000-12-34</a></li>
+            <li>Ежедневно с 12:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="demo-badge">Демо-сайт</span>
+        <span>Ресторана «Ольха» не существует: названия, адреса, телефоны и цены выдуманы. Сайт сделан для портфолио.</span>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

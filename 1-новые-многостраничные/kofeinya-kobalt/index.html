@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кобальт — обжарочная и эспрессо-бар · Москва</title>
+  <meta name="description" content="«Кобальт» — обжарочная и эспрессо-бар в Москве. Кофе, обжаренный вчера, на кобальтовом фарфоре. Демо-сайт для портфолио.">
+  <meta name="theme-color" content="#1f3fd1">
+
+  <!-- Шрифты с кириллицей: Unbounded (заголовки), Onest (текст), Playfair Display (курсив) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%231f3fd1'/%3E%3Cg transform='rotate(30 20 20)'%3E%3Cellipse cx='20' cy='20' rx='9' ry='13' fill='%23f1f2f6'/%3E%3Cpath d='M20 7c-4 5 4 21 0 26' stroke='%231f3fd1' stroke-width='2.2' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================== ШАПКА =====================
+       Одинаковая на всех 5 страницах. Текущая страница
+       отмечается атрибутом aria-current="page". -->
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Кобальт — на главную">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#1f3fd1"/>
+          <g transform="rotate(30 20 20)">
+            <ellipse cx="20" cy="20" rx="9" ry="13" fill="#f1f2f6"/>
+            <path d="M20 7c-4 5 4 21 0 26" stroke="#1f3fd1" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span>Кобальт</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="order.html">Предзаказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--small header-cta magnetic" href="order.html">Заказать заранее</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== ПЕРВЫЙ ЭКРАН ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="hero-content">
+          <p class="eyebrow" data-reveal>Обжарочная и эспрессо-бар · Москва</p>
+          <!-- data-split="chars": буквы выезжают по одной (делает скрипт) -->
+          <h1 class="hero-title" id="hero-title" data-split="chars">
+            <span class="split-line">Кобальт</span>
+            <span class="split-line"><em>кофе на фарфоре</em></span>
+          </h1>
+          <div class="hero-bottom">
+            <p class="hero-text" data-reveal style="--d:500ms">
+              Обжариваем зерно в&nbsp;понедельник, наливаем во&nbsp;вторник. Двенадцать сортов в&nbsp;ротации
+              и&nbsp;кобальтовые чашки ручной росписи.
+            </p>
+            <div class="hero-actions" data-reveal style="--d:650ms">
+              <a class="btn magnetic" href="order.html">Заказать без очереди <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn--ghost magnetic" href="menu.html">Меню</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Иллюстрация: чашка с паром. Всё нарисовано SVG -->
+      <div class="hero-art" aria-hidden="true" data-reveal="scale" style="--d:200ms">
+        <svg viewBox="0 0 400 400">
+          <circle cx="200" cy="200" r="190" fill="#1f3fd1"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#f1f2f6" stroke-opacity=".18" stroke-dasharray="3 9"/>
+
+          <!-- пар над чашкой -->
+          <g class="steam">
+            <path d="M170 140 c-22 -28 22 -48 0 -76 s22 -46 0 -70"/>
+            <path d="M205 135 c-22 -28 22 -48 0 -76 s22 -46 0 -70"/>
+            <path d="M240 140 c-22 -28 22 -48 0 -76 s22 -46 0 -70"/>
+          </g>
+
+          <g class="cup-float">
+            <!-- блюдце -->
+            <ellipse cx="200" cy="318" rx="150" ry="34" fill="#f1f2f6"/>
+            <ellipse cx="200" cy="314" rx="100" ry="20" fill="#d9dff6"/>
+            <!-- ручка -->
+            <path d="M306 196 c56 -6 58 70 -6 72" fill="none" stroke="#f1f2f6" stroke-width="18" stroke-linecap="round"/>
+            <!-- тело чашки -->
+            <path d="M90 170 h220 v34 c0 72 -48 112 -110 112 s-110 -40 -110 -112z" fill="#f1f2f6"/>
+            <!-- кобальтовая роспись -->
+            <g fill="none" stroke="#1f3fd1" stroke-width="5" stroke-linecap="round">
+              <path d="M104 224 q16 -14 32 0 t32 0 t32 0 t32 0 t32 0 t32 0"/>
+            </g>
+            <g fill="#1f3fd1">
+              <circle cx="128" cy="258" r="5"/><circle cx="164" cy="268" r="5"/><circle cx="200" cy="272" r="5"/>
+              <circle cx="236" cy="268" r="5"/><circle cx="272" cy="258" r="5"/>
+              <path d="M200 286 c-6 -10 -16 -6 -12 2 c3 6 12 10 12 10 s9 -4 12 -10 c4 -8 -6 -12 -12 -2z"/>
+            </g>
+            <!-- кофе и латте-арт -->
+            <ellipse cx="200" cy="170" rx="110" ry="22" fill="#f1f2f6"/>
+            <ellipse cx="200" cy="172" rx="98" ry="17" fill="#6d3d22"/>
+            <ellipse cx="200" cy="172" rx="80" ry="12" fill="#c58a52"/>
+            <path d="M200 182 c-30 -6 -34 -20 -16 -20 c8 0 12 4 16 9 c4 -5 8 -9 16 -9 c18 0 14 14 -16 20z" fill="#f6efe6"/>
+          </g>
+        </svg>
+
+        <!-- зёрна: data-depth — насколько сильно двигаются от курсора -->
+        <span class="bean" data-depth="40" style="--s:52px; --r:-20deg; left:-4%; top:12%">
+          <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="18" ry="26" fill="#4a2c1d"/><path d="M20 4c-8 10 8 38 0 48" stroke="#1a1310" stroke-width="3" fill="none"/></svg>
+        </span>
+        <span class="bean" data-depth="-60" style="--s:34px; --r:40deg; right:-2%; top:4%">
+          <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="18" ry="26" fill="#4a2c1d"/><path d="M20 4c-8 10 8 38 0 48" stroke="#1a1310" stroke-width="3" fill="none"/></svg>
+        </span>
+        <span class="bean" data-depth="80" style="--s:26px; --r:70deg; left:8%; bottom:6%">
+          <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="18" ry="26" fill="#e0a458"/><path d="M20 4c-8 10 8 38 0 48" stroke="#4a2c1d" stroke-width="3" fill="none"/></svg>
+        </span>
+
+        <!-- круглый значок: текст по кругу вращается и от прокрутки -->
+        <div class="badge">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="badge-circle" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+            <text font-family="Onest, sans-serif" font-size="10" font-weight="600" fill="#f1f2f6">
+              <textPath href="#badge-circle" textLength="272" lengthAdjust="spacing">ОБЖАРЕНО ВЧЕРА · ВЫПИТО СЕГОДНЯ ·</textPath>
+            </text>
+          </svg>
+          <span class="badge-core">48ч</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== БЕГУЩИЕ СТРОКИ =====================
+         Текст продублирован, чтобы движение было бесконечным.
+         aria-hidden — дикторам этот декоративный текст не нужен. -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Эспрессо</span><span><em>флэт уайт</em></span><span>Воронка V60</span><span><em>колд брю</em></span><span>Раф «Кобальт»</span><span><em>аэропресс</em></span>
+        <span>Эспрессо</span><span><em>флэт уайт</em></span><span>Воронка V60</span><span><em>колд брю</em></span><span>Раф «Кобальт»</span><span><em>аэропресс</em></span>
+      </div>
+    </div>
+    <div class="marquee marquee--dark" aria-hidden="true">
+      <div class="marquee-track" data-dir="right">
+        <span>Обжарка по понедельникам</span><span><em>12 сортов</em></span><span>Своя пекарня</span><span><em>с 7:30</em></span>
+        <span>Обжарка по понедельникам</span><span><em>12 сортов</em></span><span>Своя пекарня</span><span><em>с 7:30</em></span>
+      </div>
+    </div>
+
+    <!-- ===================== СОБЕРИ КАПУЧИНО ПРОКРУТКОЙ =====================
+         Запоминающийся элемент. Пока секция прокручивается,
+         чашка наполняется: эспрессо → молоко → пена → рисунок.
+         Скорость задаёт высота .pour в CSS (400vh). -->
+    <section class="pour" aria-labelledby="pour-title">
+      <div class="pour-stage">
+        <div class="wrap pour-grid">
+          <div>
+            <p class="eyebrow">Анатомия капучино</p>
+            <h2 class="pour-title" id="pour-title">Листайте — <em>и&nbsp;наливаем</em></h2>
+            <ol class="pour-steps">
+              <li><strong>Эспрессо</strong><span>18 г свежего помола, 36 г в чашке, 27 секунд.</span></li>
+              <li><strong>Молоко</strong><span>Взбиваем до 62 °C — дальше оно теряет сладость.</span></li>
+              <li><strong>Микропена</strong><span>Глянцевая, как краска. Без крупных пузырей.</span></li>
+              <li><strong>Рисунок</strong><span>Сердце — первое, чему учится каждый бариста «Кобальта».</span></li>
+            </ol>
+          </div>
+
+          <div class="pour-cup" aria-hidden="true">
+            <svg viewBox="0 0 400 440">
+              <defs>
+                <!-- внутренняя форма стакана: слои обрезаются по ней -->
+                <clipPath id="glass">
+                  <path d="M104 124 L296 124 L282 398 Q281 408 271 408 L129 408 Q119 408 118 398 Z"/>
+                </clipPath>
+                <linearGradient id="milk-grad" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#a4683b"/>
+                  <stop offset="1" stop-color="#e9d3b5"/>
+                </linearGradient>
+              </defs>
+
+              <!-- питчер и струйка молока (видны только пока «льём») -->
+              <g class="stream">
+                <path d="M226 70 C214 140 206 220 202 330" fill="none" stroke="#f3e6d4" stroke-width="8" stroke-linecap="round"/>
+                <path d="M240 10 h90 l-14 70 h-62 z" fill="#d9dff6" transform="rotate(-28 270 50)"/>
+                <path d="M226 72 l20 -12" stroke="#d9dff6" stroke-width="10" stroke-linecap="round"/>
+              </g>
+
+              <g clip-path="url(#glass)">
+                <rect class="layer layer-espresso" x="90" y="330" width="220" height="80" fill="#3b2216"/>
+                <rect class="layer layer-milk" x="90" y="172" width="220" height="158" fill="url(#milk-grad)"/>
+                <rect class="layer layer-foam" x="90" y="134" width="220" height="38" fill="#f6efe6"/>
+              </g>
+
+              <!-- латте-арт сверху -->
+              <g class="latte-art">
+                <ellipse cx="200" cy="134" rx="96" ry="14" fill="#f3e6d4"/>
+                <path d="M200 144 c-26 -4 -30 -16 -14 -17 c7 0 11 3 14 7 c3 -4 7 -7 14 -7 c16 1 12 13 -14 17z" fill="#b8763f"/>
+              </g>
+
+              <!-- стекло -->
+              <path d="M104 124 L296 124 L282 398 Q281 408 271 408 L129 408 Q119 408 118 398 Z" fill="rgba(255,255,255,.04)" stroke="rgba(241,242,246,.55)" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M124 150 L134 380" stroke="rgba(255,255,255,.25)" stroke-width="6" stroke-linecap="round"/>
+              <ellipse cx="200" cy="420" rx="130" ry="10" fill="rgba(0,0,0,.35)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="pour-progress" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ===================== ОБЖАРКА НЕДЕЛИ ===================== -->
+    <section class="section" aria-labelledby="roast-title">
+      <div class="wrap">
+        <div class="roast">
+          <div>
+            <p class="eyebrow" data-reveal>Обжарка недели</p>
+            <h2 class="section-title" id="roast-title" data-split="words">
+              <span class="split-line">Черешня,</span>
+              <span class="split-line">какао <em>и&nbsp;немного</em></span>
+              <span class="split-line">солнца</span>
+            </h2>
+            <p class="lead" data-reveal>Мытая Колумбия светлой обжарки. Хороша в&nbsp;воронке и&nbsp;как эспрессо — бариста подскажет, как вкуснее сегодня.</p>
+            <!-- цена пачки — меняйте здесь -->
+            <a class="btn magnetic" href="menu.html#filter" data-reveal>Пачка 250 г — 1&nbsp;450&nbsp;₽ <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+
+          <!-- шкалы вкуса: число в --v — это проценты заполнения -->
+          <div class="roast-card" data-reveal="clip">
+            <p class="roast-origin">Колумбия, Уила</p>
+            <p class="roast-meta">Ферма «Ла Пальмита» · 1 750 м · мытая обработка</p>
+            <ul class="taste">
+              <li><div class="taste-row"><span>Кислотность</span><span>7/10</span></div><div class="taste-bar"><i style="--v:70; --d:200ms"></i></div></li>
+              <li><div class="taste-row"><span>Сладость</span><span>9/10</span></div><div class="taste-bar"><i style="--v:90; --d:350ms"></i></div></li>
+              <li><div class="taste-row"><span>Плотность</span><span>5/10</span></div><div class="taste-bar"><i style="--v:50; --d:500ms"></i></div></li>
+              <li><div class="taste-row"><span>Послевкусие</span><span>8/10</span></div><div class="taste-bar"><i style="--v:80; --d:650ms"></i></div></li>
+            </ul>
+            <div class="notes">
+              <span class="note">черешня</span><span class="note">какао</span><span class="note">тростниковый сахар</span><span class="note">апельсин</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Цифры: data-count — до какого числа «набегает» счётчик -->
+        <div class="stats">
+          <div data-reveal><div class="stat-num"><span data-count="640">640</span></div><div class="stat-label">чашек наливаем в день</div></div>
+          <div data-reveal style="--d:100ms"><div class="stat-num"><span data-count="12">12</span></div><div class="stat-label">сортов в ротации</div></div>
+          <div data-reveal style="--d:200ms"><div class="stat-num"><span data-count="48">48</span><sup>ч</sup></div><div class="stat-label">от обжарки до чашки</div></div>
+          <div data-reveal style="--d:300ms"><div class="stat-num"><span data-count="1180">1180</span><sup>кг</sup></div><div class="stat-label">обжарили за прошлый год</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ПРИЗЫВ ===================== -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <h2 id="cta-title" data-split="chars"><span class="split-line">Заглянете</span><span class="split-line"><em>на&nbsp;чашку?</em></span></h2>
+        <a class="cta-circle magnetic" href="order.html">Заказать →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== ПОДВАЛ =====================
+       Одинаковый на всех страницах. Пометка «Демо-сайт» обязательна. -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-lead">Кофе, который обжарили <span class="accent">вчера</span>.</p>
+          <a class="btn btn--light magnetic" href="order.html">Заказать заранее <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div>
+          <h2 class="footer-title">Разделы</h2>
+          <ul class="footer-list">
+            <li><a href="index.html" aria-current="page">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="order.html">Предзаказ</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Адрес</h2>
+          <ul class="footer-list">
+            <li>Москва, Фарфоровый проезд, 3</li>
+            <li><a href="tel:+74950005678">+7 (495) 000-56-78</a></li>
+            <li>Пн–Пт 7:30–21:00<br>Сб–Вс 9:00–22:00</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-giant" aria-hidden="true">Кобальт</p>
+      <div class="footer-bottom">
+        <span class="demo-badge">Демо-сайт</span>
+        <span>Кофейни «Кобальт» не существует: названия, адреса, телефоны и цены выдуманы. Сайт сделан для портфолио.</span>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

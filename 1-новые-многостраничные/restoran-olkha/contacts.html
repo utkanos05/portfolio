@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — Ольха · кухня на ольховых углях</title>
+  <meta name="description" content="Адрес, телефон и часы работы ресторана «Ольха». Демо-сайт для портфолио.">
+  <meta name="theme-color" content="#15302c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2315302c'/%3E%3Cpath d='M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z' fill='%236f2639'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ===================== ШАПКА ===================== -->
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html" aria-label="Ольха — на главную">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+          <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Ольха<small>кухня на углях</small></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        Меню
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="menu.html">Меню</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html" aria-current="page">Контакты</a></li>
+          <li class="nav-cta"><a class="btn btn--small" href="booking.html">Забронировать</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Контакты</p>
+        <h1>Найти <em>по дыму</em></h1>
+      </div>
+    </section>
+
+    <div class="wrap contacts-grid">
+
+      <!-- ===================== КОНТАКТЫ =====================
+           Все данные выдуманные — замените на свои. -->
+      <div>
+        <div class="contact-block">
+          <div class="contact-label">Адрес</div>
+          <p class="contact-value">Москва, Туманный переулок, 9</p>
+          <p class="contact-sub">Вход со двора, под ольховой вывеской. Метро «Ольховая роща», 6 минут пешком.</p>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label">Телефон</div>
+          <p class="contact-value"><a href="tel:+74950001234">+7 (495) 000-12-34</a></p>
+          <p class="contact-sub">Бронь и банкеты, ежедневно с 11:00 до 23:00.</p>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label">Почта</div>
+          <p class="contact-value"><a href="mailto:hello@olkha.example">hello@olkha.example</a></p>
+          <p class="contact-sub">Для сотрудничества и прессы.</p>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label">Часы работы</div>
+          <!-- data-day: 1 — понедельник … 6 — суббота, 0 — воскресенье.
+               Сегодняшний день подсветит скрипт. -->
+          <table class="hours">
+            <caption class="visually-hidden">Часы работы ресторана</caption>
+            <tbody>
+              <tr data-day="1"><th scope="row">Понедельник</th><td>12:00 — 23:00</td></tr>
+              <tr data-day="2"><th scope="row">Вторник</th><td>12:00 — 23:00</td></tr>
+              <tr data-day="3"><th scope="row">Среда</th><td>12:00 — 23:00</td></tr>
+              <tr data-day="4"><th scope="row">Четверг</th><td>12:00 — 00:00</td></tr>
+              <tr data-day="5"><th scope="row">Пятница</th><td>12:00 — 01:00</td></tr>
+              <tr data-day="6"><th scope="row">Суббота</th><td>12:00 — 01:00</td></tr>
+              <tr data-day="0"><th scope="row">Воскресенье</th><td>12:00 — 23:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===================== НАРИСОВАННАЯ КАРТА ===================== -->
+      <div>
+        <figure class="map" style="margin:0">
+          <svg viewBox="0 0 600 440" role="img" aria-labelledby="map-title">
+            <title id="map-title">Схема проезда: ресторан на Туманном переулке, рядом с метро «Ольховая роща» и Тихим бульваром</title>
+            <rect width="600" height="440" fill="#cfd8d0"/>
+            <!-- парк -->
+            <path d="M380 0h220v170c-60 20-120 10-170-20-30-20-50-80-50-150z" fill="#b5c4b8"/>
+            <g fill="#15302c" opacity=".25">
+              <circle cx="450" cy="50" r="10"/><circle cx="500" cy="80" r="12"/><circle cx="560" cy="40" r="9"/>
+              <circle cx="540" cy="120" r="11"/><circle cx="470" cy="110" r="8"/>
+            </g>
+            <!-- река -->
+            <path d="M-10 380 C120 330 200 400 320 360 S520 300 610 330" fill="none" stroke="#a7b6ad" stroke-width="34"/>
+            <!-- кварталы -->
+            <g fill="#dde3dc">
+              <rect x="30" y="40" width="130" height="90"/>
+              <rect x="200" y="40" width="140" height="90"/>
+              <rect x="30" y="170" width="130" height="110"/>
+              <rect x="200" y="170" width="150" height="110"/>
+              <rect x="390" y="210" width="180" height="70"/>
+            </g>
+            <!-- улицы -->
+            <g stroke="#f2f4f0" stroke-width="16" fill="none" stroke-linecap="round">
+              <path d="M0 150H600"/>
+              <path d="M180 0V320"/>
+              <path d="M370 150V310"/>
+              <path d="M180 300C260 300 320 300 600 296"/>
+            </g>
+            <!-- подписи улиц (выдуманные) -->
+            <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#56645f" letter-spacing="1">
+              <text x="40" y="146">ОЛЬХОВАЯ УЛ.</text>
+              <text x="176" y="250" transform="rotate(-90 176 250)">ТУМАННЫЙ ПЕР.</text>
+              <text x="420" y="292">ТИХИЙ БУЛЬВАР</text>
+              <text x="470" y="20">ПАРК «ЕЛАНЬ»</text>
+            </g>
+            <!-- метро -->
+            <g transform="translate(80 210)">
+              <circle r="16" fill="#15302c"/>
+              <text y="5" text-anchor="middle" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#e6eae3">М</text>
+              <text x="0" y="36" text-anchor="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#15302c">Ольховая роща</text>
+            </g>
+            <!-- пунктир маршрута от метро -->
+            <path d="M96 210H150Q180 210 180 180V160Q180 150 196 150H252" fill="none" stroke="#6f2639" stroke-width="3" stroke-dasharray="6 6"/>
+            <!-- метка ресторана -->
+            <g transform="translate(270 150)">
+              <g class="map-pin">
+                <path d="M0 0C-18-22-22-32-22-42a22 22 0 0 1 44 0c0 10-4 20-22 42z" fill="#6f2639"/>
+                <circle cy="-42" r="8" fill="#e6eae3"/>
+              </g>
+              <text x="0" y="22" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="600" fill="#15302c">Ольха</text>
+            </g>
+          </svg>
+          <figcaption class="map-caption">Схема нарисована от руки и не соответствует реальной карте Москвы.</figcaption>
+        </figure>
+
+        <ul class="route">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 16V8l5 6 5-6v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <div><strong>На метро.</strong> От станции «Ольховая роща» — по Ольховой улице до Туманного переулка, 6 минут.</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16v-4l2-5h14l2 5v4z M3 16v2h3v-2M18 16v2h3v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="13" r="1.5" fill="currentColor"/><circle cx="17" cy="13" r="1.5" fill="currentColor"/></svg>
+            <div><strong>На машине.</strong> Платная городская парковка вдоль Тихого бульвара.</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="17" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 17l4-8h6l2 8M10 9l-1-3H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <div><strong>На велосипеде.</strong> Во дворе есть велопарковка на шесть мест.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===================== ПОДВАЛ ===================== -->
+  <footer class="site-footer">
+    <svg class="footer-edge" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 40V28L40 14L80 28L120 6L160 26L200 16L240 28L280 4L320 24L360 12L400 28L440 8L480 26L520 18L560 28L600 2L640 24L680 14L720 28L760 6L800 26L840 16L880 28L920 8L960 24L1000 12L1040 28L1080 6L1120 24L1160 16L1200 28V40Z"/>
+    </svg>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="Ольха — на главную">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M20 7c6 4 9 9 8 15-1 5-5 8-8 10-3-2-7-5-8-10-1-6 2-11 8-15z" fill="#6f2639"/>
+              <path d="M20 10v24M20 16l-4-3M20 16l4-3M20 22l-5-3M20 22l5-3" stroke="#e6eae3" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">Ольха<small>кухня на углях</small></span>
+          </a>
+          <p class="footer-about">Авторская северная кухня, приготовленная на ольховых углях. Сорок мест, одна печь и двенадцать меню в году.</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Разделы</h2>
+          <ul class="footer-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="booking.html">Бронирование</a></li>
+            <li><a href="contacts.html" aria-current="page">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Как найти</h2>
+          <ul class="footer-list">
+            <li>Москва, Туманный переулок, 9</li>
+            <li><a href="tel:+74950001234">+7 (495) 000-12-34</a></li>
+            <li>Ежедневно с 12:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="demo-badge">Демо-сайт</span>
+        <span>Ресторана «Ольха» не существует: названия, адреса, телефоны и цены выдуманы. Сайт сделан для портфолио.</span>
+        <span>© <span data-year>2026</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

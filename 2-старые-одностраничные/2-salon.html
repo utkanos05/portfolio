@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лиль — студия красоты</title>
+<meta name="description" content="Стрижки, окрашивание, маникюр. Онлайн-запись за минуту.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. ЦВЕТА И ШРИФТЫ ===== */
+:root{
+  --plum:#2b1a35;       /* глубокий баклажан */
+  --lilac:#e9e3f1;      /* светлая сирень, фон блоков */
+  --rose:#c4577a;       /* акцент: кнопки */
+  --rose-dark:#a4415f;
+  --white:#fdfcfe;
+  --ink:#231a2b;
+  --muted:#6d6177;
+  --head:"Cormorant Garamond",Georgia,serif;
+  --body:"Golos Text","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);font-weight:600;line-height:1.1}
+
+/* ===== 2. ПЕРВЫЙ ЭКРАН: тёмный слева, светлый справа ===== */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:92vh}
+.hero-left{background:var(--plum);color:var(--white);padding:34px 8vw 64px;display:flex;flex-direction:column;justify-content:space-between}
+.brand{font-family:var(--head);font-size:30px;font-weight:700;text-decoration:none}
+.hero h1{font-size:clamp(44px,6.6vw,86px);margin:50px 0 22px;letter-spacing:-.01em}
+.hero p{max-width:28em;font-size:19px;color:#d9cde4;margin-bottom:32px}
+.btn{display:inline-block;background:var(--rose);color:#fff;border:0;padding:15px 30px;border-radius:4px;font:600 16px var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--rose-dark)}
+.hero-right{background:var(--lilac);display:grid;place-items:center;padding:40px}
+/* рисуем «ножницы» из SVG, фото не нужны */
+.hero-right svg{width:min(100%,340px);height:auto}
+
+/* ===== 3. УСЛУГИ И ЦЕНЫ ===== */
+section{padding:84px 0}
+.title{font-size:clamp(34px,4.6vw,52px);margin-bottom:30px}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:20px 64px}
+.group h3{font-size:28px;margin-bottom:6px;color:var(--rose-dark)}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #ddd3e6}
+.row span small{display:block;color:var(--muted);font-size:14px}
+.row b{white-space:nowrap;font-weight:600}
+
+/* ===== 4. МАСТЕРА ===== */
+.masters{background:var(--lilac)}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.person{background:var(--white);padding:26px;border-radius:6px}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--plum);color:var(--white);display:grid;place-items:center;font:600 28px var(--head);margin-bottom:16px}
+.person h3{font-size:26px}
+.person p{color:var(--muted);font-size:15px;margin-top:6px}
+
+/* ===== 5. ЗАПИСЬ ===== */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+form{display:grid;gap:14px}
+label{font-weight:500;font-size:15px;display:grid;gap:6px}
+input,select{font:inherit;padding:13px 14px;border:1.5px solid #c9bdd6;border-radius:4px;background:#fff;color:var(--ink)}
+input:focus,select:focus{border-color:var(--rose);outline:none}
+.hint{font-size:14px;color:var(--muted)}
+.ok{display:none;background:#e9f6ee;border-left:4px solid #3e9b66;padding:12px 14px;font-size:15px}
+
+footer{background:var(--plum);color:#bfb0cc;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ===== 6. ТЕЛЕФОН ===== */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{min-height:300px}
+  .prices,.book,.people{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-left">
+    <a class="brand" href="#">Лиль</a>
+    <div>
+      <h1>Стрижка, после которой хочется улыбнуться зеркалу</h1>
+      <p>Студия красоты на три кресла. Запишитесь на удобное время: мы напомним за день и не будем опаздывать.</p>
+      <a class="btn" href="#book">Записаться</a>
+    </div>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <svg viewBox="0 0 200 240" fill="none" stroke="#2b1a35" stroke-width="6" stroke-linecap="round">
+      <circle cx="60" cy="190" r="26"/>
+      <circle cx="140" cy="190" r="26"/>
+      <path d="M72 166 L132 18"/>
+      <path d="M128 166 L68 18"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section id="prices">
+    <div class="wrap">
+      <h2 class="title">Услуги и цены</h2>
+      <div class="prices">
+        <div class="group">
+          <h3>Волосы</h3>
+          <div class="row"><span>Женская стрижка<small>с мытьём и укладкой, 1 ч</small></span><b>2 500 ₽</b></div>
+          <div class="row"><span>Мужская стрижка<small>45 мин</small></span><b>1 500 ₽</b></div>
+          <div class="row"><span>Окрашивание в один тон<small>от, зависит от длины</small></span><b>от 4 500 ₽</b></div>
+          <div class="row"><span>Укладка<small>30 мин</small></span><b>1 200 ₽</b></div>
+        </div>
+        <div class="group">
+          <h3>Ногти</h3>
+          <div class="row"><span>Маникюр<small>с покрытием гель-лаком, 1,5 ч</small></span><b>2 200 ₽</b></div>
+          <div class="row"><span>Педикюр<small>с покрытием, 2 ч</small></span><b>2 800 ₽</b></div>
+          <div class="row"><span>Снятие покрытия<small>15 мин</small></span><b>400 ₽</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="masters" id="masters">
+    <div class="wrap">
+      <h2 class="title">Мастера</h2>
+      <div class="people">
+        <div class="person"><div class="avatar">А</div><h3>Анна</h3><p>Стилист. Стрижки и окрашивание, 8 лет опыта.</p></div>
+        <div class="person"><div class="avatar">М</div><h3>Мария</h3><p>Мастер маникюра и педикюра, 6 лет опыта.</p></div>
+        <div class="person"><div class="avatar">Д</div><h3>Дмитрий</h3><p>Барбер. Мужские стрижки и уход за бородой.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div>
+        <h2 class="title">Запись онлайн</h2>
+        <p>Выберите услугу и день, оставьте имя. Мы подтвердим время в мессенджере в течение часа.</p>
+        <p class="hint" style="margin-top:16px">Работаем ежедневно с 10:00 до 21:00.<br>ул. Примерная, 5 (замените на адрес клиента).</p>
+      </div>
+
+      <!-- ФОРМА: по кнопке открывается WhatsApp с готовым текстом. Номер замени в JS ниже -->
+      <form id="f">
+        <label>Имя
+          <input name="name" required autocomplete="given-name">
+        </label>
+        <label>Услуга
+          <select name="service">
+            <option>Женская стрижка</option>
+            <option>Мужская стрижка</option>
+            <option>Окрашивание</option>
+            <option>Маникюр</option>
+            <option>Педикюр</option>
+          </select>
+        </label>
+        <label>Желаемый день
+          <input name="day" type="date" required>
+        </label>
+        <button class="btn" type="submit">Отправить заявку в WhatsApp</button>
+        <p class="ok" id="ok" role="status">Открываем WhatsApp. Если ничего не открылось, проверьте, что он установлен.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© Лиль. Демо-сайт: название, цены и мастера выдуманные.</span><span>+7 000 000-00-00</span></div>
+</footer>
+
+<script>
+  // Номер клиента: только цифры, с кодом страны, без плюса
+  var PHONE = "70000000000";
+  var form = document.getElementById("f");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = new FormData(form);
+    var text = "Здравствуйте! Меня зовут " + d.get("name") +
+               ". Хочу записаться: " + d.get("service") +
+               ", " + d.get("day") + ".";
+    document.getElementById("ok").style.display = "block";
+    window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text), "_blank");
+  });
+</script>
+</body>
+</html>
