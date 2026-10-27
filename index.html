@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио — демо-сайты</title>
+  <meta name="description" content="Оглавление демо-сайтов для портфолио веб-разработчика.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       Оглавление портфолио. Чтобы добавить новый сайт,
+       скопируйте целиком блок <li class="project">…</li>
+       в раздел «Новые» и поменяйте название, ссылку и цвета.
+       ===================================================== */
+    :root {
+      --bg: #f4f4f2;     /* фон */
+      --ink: #17171a;    /* текст */
+      --muted: #6e6e76;  /* подписи */
+      --line: rgba(23, 23, 26, .12);
+      --new: #1f3fd1;    /* метка «новый» */
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 17px/1.6 "Onest", "Segoe UI", Arial, sans-serif;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--new); outline-offset: 4px; border-radius: 6px; }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .wrap { padding: 0 40px; } }
+
+    header { padding: 72px 0 40px; }
+    h1 {
+      font: 800 clamp(44px, 9vw, 104px)/.9 "Unbounded", sans-serif;
+      letter-spacing: -.05em;
+      margin: 0 0 20px;
+    }
+    .intro { color: var(--muted); max-width: 52ch; margin: 0; }
+
+    h2 {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      font: 600 22px/1.2 "Unbounded", sans-serif;
+      letter-spacing: -.02em;
+      margin: 64px 0 0;
+      padding-bottom: 16px;
+      border-bottom: 1.5px solid var(--ink);
+    }
+    h2 small { font: 500 14px "Onest", sans-serif; color: var(--muted); letter-spacing: 0; }
+
+    .list { list-style: none; margin: 0; padding: 0; }
+
+    /* Строка проекта: палитра, название, описание, ссылки */
+    .project {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (min-width: 800px) {
+      .project { grid-template-columns: 150px 1fr auto; align-items: center; }
+    }
+
+    /* Полоска цветов сайта — цвета берутся из style="--a: …" */
+    .palette { display: flex; height: 44px; border-radius: 12px; overflow: hidden; max-width: 150px; }
+    .palette i { flex: 1; background: var(--c); }
+
+    .name { font: 600 clamp(22px, 2.6vw, 30px)/1.1 "Unbounded", sans-serif; letter-spacing: -.03em; margin: 0 0 6px; }
+    .desc { color: var(--muted); margin: 0; font-size: 15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tag { padding: 3px 10px; border-radius: 999px; background: #fff; font-size: 12px; font-weight: 600; }
+    .tag--new { background: var(--new); color: #fff; }
+
+    .open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .25s, transform .25s;
+      width: max-content;
+    }
+    .open:hover { background: var(--new); transform: translateX(4px); }
+    .open--light { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+    .open--light:hover { color: #fff; }
+
+    footer { margin-top: 80px; padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .open { transition: none; }
+      .open:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Портфолио</h1>
+      <p class="intro">Демо-сайты вымышленных заведений. Наверху — новые многостраничные проекты, ниже — ранние одностраничники. Все названия, адреса, телефоны и цены выдуманы.</p>
+    </header>
+
+    <!-- ===================== НОВЫЕ ===================== -->
+    <h2>Новые <small>папка 1-новые-многостраничные · октябрь 2026</small></h2>
+    <ul class="list">
+      <li class="project">
+        <div class="palette" aria-hidden="true">
+          <i style="--c:#1f3fd1"></i><i style="--c:#1a1310"></i><i style="--c:#e0a458"></i><i style="--c:#d9dff6"></i><i style="--c:#f1f2f6"></i>
+        </div>
+        <div>
+          <p class="name">Кобальт</p>
+          <p class="desc">Обжарочная и эспрессо-бар. Капучино наливается при прокрутке, переходы между страницами, предзаказ с живым чеком.</p>
+          <div class="tags"><span class="tag tag--new">Новый</span><span class="tag">5 страниц</span><span class="tag">Анимации</span><span class="tag">Предзаказ → WhatsApp</span></div>
+        </div>
+        <a class="open" href="1-новые-многостраничные/kofeinya-kobalt/index.html">Открыть →</a>
+      </li>
+      <li class="project">
+        <div class="palette" aria-hidden="true">
+          <i style="--c:#15302c"></i><i style="--c:#6f2639"></i><i style="--c:#b38a45"></i><i style="--c:#cfd8d0"></i><i style="--c:#e6eae3"></i>
+        </div>
+        <div>
+          <p class="name">Ольха</p>
+          <p class="desc">Авторский ресторан северной кухни. «Сезонный круг» месяцев, меню с фильтром, бронирование столика.</p>
+          <div class="tags"><span class="tag tag--new">Новый</span><span class="tag">5 страниц</span><span class="tag">Фильтр меню</span><span class="tag">Бронь → WhatsApp</span></div>
+        </div>
+        <a class="open" href="1-новые-многостраничные/restoran-olkha/index.html">Открыть →</a>
+      </li>
+    </ul>
+
+    <!-- ===================== РАННИЕ ===================== -->
+    <h2>Ранние <small>папка 2-старые-одностраничные · 20 октября 2026</small></h2>
+    <ul class="list">
+      <li class="project">
+        <div class="palette" aria-hidden="true">
+          <i style="--c:#1d3a30"></i><i style="--c:#f2c230"></i><i style="--c:#16231e"></i><i style="--c:#f4f6f0"></i>
+        </div>
+        <div>
+          <p class="name">Мука</p>
+          <p class="desc">Пекарня и кофейня.</p>
+          <div class="tags"><span class="tag">1 страница</span></div>
+        </div>
+        <a class="open open--light" href="2-старые-одностраничные/1-cafe.html">Открыть →</a>
+      </li>
+      <li class="project">
+        <div class="palette" aria-hidden="true">
+          <i style="--c:#2b1a35"></i><i style="--c:#c4577a"></i><i style="--c:#e9e3f1"></i><i style="--c:#fdfcfe"></i>
+        </div>
+        <div>
+          <p class="name">Лиль</p>
+          <p class="desc">Студия красоты.</p>
+          <div class="tags"><span class="tag">1 страница</span></div>
+        </div>
+        <a class="open open--light" href="2-старые-одностраничные/2-salon.html">Открыть →</a>
+      </li>
+      <li class="project">
+        <div class="palette" aria-hidden="true">
+          <i style="--c:#2433d6"></i><i style="--c:#f6e85a"></i><i style="--c:#12163a"></i><i style="--c:#eef0fb"></i>
+        </div>
+        <div>
+          <p class="name">Глина</p>
+          <p class="desc">Керамика ручной работы.</p>
+          <div class="tags"><span class="tag">1 страница</span></div>
+        </div>
+        <a class="open open--light" href="2-старые-одностраничные/3-shop.html">Открыть →</a>
+      </li>
+    </ul>
+
+    <footer>Демо-сайты для портфолио. Заведений не существует.</footer>
+  </main>
+</body>
+</html>
